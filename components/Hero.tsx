@@ -71,7 +71,7 @@ export default function Hero() {
             src="/img/foto1.jpeg"
             alt="Foto Muhammad Haruqi Uwais"
             fill
-            className="object-cover"
+            className="object-fill"
             priority
           />
         </div>
@@ -136,7 +136,7 @@ export default function Hero() {
 
             {/* Tombol Google Maps */}
             <a
-              href="https://maps.app.goo.gl/doS9RwJ5SLyLxNCq5?g_st=ic" 
+              href="https://maps.app.goo.gl/doS9RwJ5SLyLxNCq5?g_st=ic"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#8d775f] text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-[#6d5c49] transition-all shadow-md active:scale-95"
@@ -171,6 +171,9 @@ export default function Hero() {
           </p>
           <p className="text-sm opacity-90 italic">An. Dwi Fiska Oktarino</p>
         </div>
+        <h3 className={`${playfair.className} text-3xl text-[#2c3e50] mt-10`}>
+          Wassalamu’alaikum Wr. Wb.
+        </h3>
       </div>
     </section>
   );
