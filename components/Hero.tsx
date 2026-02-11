@@ -61,15 +61,9 @@ export default function Hero() {
           >
             Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang
             Bapak/Ibu/Saudara/i untuk turut hadir di acara Tasyakuran Aqiqah
-            putra kami:
+            putra keempat kami:
           </p>
         </div>
-
-        <h2
-          className={`${playfair.className} italic text-2xl md:text-3xl text-[#8d775f] mb-2`}
-        >
-          Tasyakur Aqiqah
-        </h2>
 
         {/* Frame Foto Bayi */}
         <div className="my-8 relative w-48 h-64 md:w-64 md:h-80 rounded-t-full border-8 border-white shadow-2xl overflow-hidden">
@@ -120,7 +114,7 @@ export default function Hero() {
             <p
               className={`${jakarta.className} text-base text-gray-700 font-semibold`}
             >
-              Minggu, 06 Februari 2026
+              Minggu, 14 Februari 2026
             </p>
             <p className={`${jakarta.className} text-sm text-gray-600 italic`}>
               Pukul 10.00 WIB s.d Selesai
