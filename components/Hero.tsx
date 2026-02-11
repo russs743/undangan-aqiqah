@@ -35,8 +35,14 @@ export default function Hero() {
       {/* Background & Overlay */}
       <div className="absolute inset-0 z-0">
         <div ref={imageRef} className="relative w-full h-full">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=2070')] bg-cover bg-center opacity-20" />
-          <div className="absolute inset-0 from-[#f4f1ea]/50 via-transparent to-[#f4f1ea]" />
+          <Image
+            src="/img/foto1.jpeg"
+            alt="Background"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 from-[#f4f1ea]/80 via-transparent to-[#f4f1ea]" />
         </div>
       </div>
 
@@ -45,6 +51,20 @@ export default function Hero() {
         ref={contentRef}
         className="relative z-10 text-center px-6 max-w-4xl flex flex-col items-center"
       >
+        {/* TAMBAHAN: Salam & Kalimat Pembuka */}
+        <div className="mb-10 space-y-4">
+          <h3 className={`${playfair.className} text-3xl text-[#2c3e50]`}>
+            Assalamu’alaikum Wr. Wb.
+          </h3>
+          <p
+            className={`${jakarta.className} text-sm md:text-base text-gray-600 max-w-lg leading-relaxed mx-auto italic`}
+          >
+            Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang
+            Bapak/Ibu/Saudara/i untuk turut hadir di acara Tasyakuran Aqiqah
+            putra kami:
+          </p>
+        </div>
+
         <h2
           className={`${playfair.className} italic text-2xl md:text-3xl text-[#8d775f] mb-2`}
         >
@@ -57,7 +77,7 @@ export default function Hero() {
             src="/img/foto1.jpeg"
             alt="Foto Muhammad Haruqi Uwais"
             fill
-            className="object-fill"
+            className="object-cover"
             priority
           />
         </div>
@@ -76,12 +96,12 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="w-16 bg-[#d4af37] my-4" />
+        <div className="w-16 h-1 bg-[#d4af37] my-4" />
 
         {/* Orang Tua Section */}
         <div className={`${jakarta.className} space-y-2 mb-8`}>
-          <p className="text-gray-700">
-            <span className="font-semibold">Putra Dari:</span>
+          <p className="text-gray-700 font-semibold uppercase text-xs tracking-widest">
+            Putra Dari:
           </p>
           <div className="text-lg md:text-xl text-[#2c3e50] font-medium">
             <p>Bpk. Dwi Fiska Oktarino</p>
@@ -89,19 +109,61 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Alamat Section */}
-        <div className="max-w-md bg-white/40 backdrop-blur-sm p-6 rounded-2xl border border-white/60 shadow-sm mb-10">
-          <p
-            className={`${jakarta.className} text-xs font-bold uppercase tracking-widest text-[#8d775f] mb-2`}
-          >
-            Lokasi Acara
-          </p>
-          <p
-            className={`${jakarta.className} text-sm text-gray-700 leading-relaxed`}
-          >
-            Perum permata Asri Blok G polos (simpang Y) no. 12 A, Karang Anyar,
-            Jati Agung, Lampung Selatan.
-          </p>
+        {/* Waktu & Lokasi Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 w-full max-w-2xl">
+          <div className="bg-white/40 backdrop-blur-sm p-6 rounded-2xl border border-white/60 shadow-sm flex flex-col justify-center">
+            <p
+              className={`${jakarta.className} text-xs font-bold uppercase tracking-widest text-[#8d775f] mb-2`}
+            >
+              Waktu Acara
+            </p>
+            <p
+              className={`${jakarta.className} text-base text-gray-700 font-semibold`}
+            >
+              Minggu, 06 Februari 2026
+            </p>
+            <p className={`${jakarta.className} text-sm text-gray-600 italic`}>
+              Pukul 10.00 WIB s.d Selesai
+            </p>
+          </div>
+
+          <div className="bg-white/40 backdrop-blur-sm p-6 rounded-2xl border border-white/60 shadow-sm flex flex-col items-center">
+            <p
+              className={`${jakarta.className} text-xs font-bold uppercase tracking-widest text-[#8d775f] mb-2`}
+            >
+              Lokasi Acara
+            </p>
+            <p
+              className={`${jakarta.className} text-sm text-gray-700 leading-relaxed mb-4`}
+            >
+              Perum permata Asri Blok G polos (simpang Y) no. 12 A, Karang
+              Anyar, Jati Agung, Lampung Selatan.
+            </p>
+
+            {/* Tombol Google Maps */}
+            <a
+              href="https://maps.app.goo.gl/doS9RwJ5SLyLxNCq5?g_st=ic" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[#8d775f] text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-[#6d5c49] transition-all shadow-md active:scale-95"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              PETUNJUK LOKASI
+            </a>
+          </div>
         </div>
 
         {/* Kado Digital / Rekening */}
@@ -110,7 +172,9 @@ export default function Hero() {
             Kado Digital
           </p>
           <p className="font-bold text-lg mb-1">Bank BSI</p>
-          <p className="text-2xl tracking-wider font-mono my-2">7332310838</p>
+          <p className="text-2xl tracking-wider font-mono my-2 font-bold">
+            7332310838
+          </p>
           <p className="text-sm opacity-90 italic">An. Dwi Fiska Oktarino</p>
         </div>
       </div>
