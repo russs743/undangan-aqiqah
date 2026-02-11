@@ -114,7 +114,7 @@ export default function Hero() {
             <p
               className={`${jakarta.className} text-base text-gray-700 font-semibold`}
             >
-              Minggu, 14 Februari 2026
+              Minggu, 15 Februari 2026
             </p>
             <p className={`${jakarta.className} text-sm text-gray-600 italic`}>
               Pukul 10.00 WIB s.d Selesai
