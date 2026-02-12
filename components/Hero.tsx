@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 
@@ -11,6 +11,7 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const [showGift, setShowGift] = useState(false);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -161,16 +162,43 @@ export default function Hero() {
         </div>
 
         {/* Kado Digital / Rekening */}
-        <div className="bg-[#8d775f] text-white p-6 rounded-2xl shadow-xl w-full max-w-sm">
-          <p className="text-xs uppercase tracking-[0.2em] mb-3 opacity-80">
-            Kado Digital
-          </p>
-          <p className="font-bold text-lg mb-1">Bank BSI</p>
-          <p className="text-2xl tracking-wider font-mono my-2 font-bold">
-            7332310838
-          </p>
-          <p className="text-sm opacity-90 italic">An. Dwi Fiska Oktarino</p>
-        </div>
+<div className="w-full max-w-sm">
+  {/* Header Tombol untuk Membuka Kado */}
+  <button 
+    onClick={() => setShowGift(!showGift)}
+    className="w-full bg-[#8d775f] text-white p-4 rounded-2xl shadow-lg flex justify-between items-center transition-all hover:bg-[#6d5c49] active:scale-95"
+  >
+    <div className="flex items-center gap-3">
+      <span className="text-xl">🎁</span>
+      <span className={`${jakarta.className} text-xs uppercase tracking-[0.2em] font-bold`}>
+        Kado Digital
+      </span>
+    </div>
+    <span className={`transition-transform duration-300 ${showGift ? 'rotate-180' : ''}`}>
+      ▼
+    </span>
+  </button>
+
+  {/* Konten Rekening yang Tersembunyi */}
+  <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showGift ? 'max-h-60 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+    <div className="bg-white border-2 border-[#8d775f] p-6 rounded-2xl shadow-inner text-center">
+      <p className={`${jakarta.className} text-[#8d775f] font-bold text-lg mb-1`}>Bank BSI</p>
+      <p className="text-[#2c3e50] text-2xl tracking-wider font-mono font-bold my-2 select-all">
+        7332310838
+      </p>
+      <p className="text-gray-500 text-sm italic mb-4">An. Dwi Fiska Oktarino</p>
+      
+      <button 
+        onClick={() => {
+          navigator.clipboard.writeText("7332310838");
+        }}
+        className="text-[10px] text-[#8d775f] border border-[#8d775f] px-3 py-1 rounded-full font-bold hover:bg-[#8d775f] hover:text-white transition-colors"
+      >
+        SALIN NOMOR
+      </button>
+    </div>
+  </div>
+</div>
         <h3 className={`${playfair.className} text-3xl text-[#2c3e50] mt-10`}>
           Wassalamu’alaikum Wr. Wb.
         </h3>
